@@ -3,130 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Страница не обрѣтена | Гойдапедия</title>
+    <title>404 - Страница не найдена | Гойдапедия</title>
     <link rel="icon" type="image/png" href="logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script>
         function setTheme(theme) {
             if (theme === 'orthodox') {
-                document.body.style.backgroundColor = '#DB1C0F';
+                document.body.style.background = "linear-gradient(to bottom, #5B0E02, #250601)";
                 document.body.style.color = '#FCD801';
                 document.querySelector('.header').style.borderBottomColor = '#FCD801';
                 document.querySelector('.nav-bar').style.borderBottomColor = '#FCD801';
             } else if (theme === 'dark') {
                 document.body.style.backgroundColor = '#202020';
                 document.body.style.color = '#EBEBEB';
-                document.querySelector('.header').style.borderBottomColor = '#EBEBEB';
-                document.querySelector('.nav-bar').style.borderBottomColor = '#EBEBEB';
             } else if (theme === 'light') {
                 document.body.style.backgroundColor = '#EBEBEB';
                 document.body.style.color = '#202020';
-                document.querySelector('.header').style.borderBottomColor = '#202020';
-                document.querySelector('.nav-bar').style.borderBottomColor = '#202020';
             }
             localStorage.setItem('theme', theme);
         }
 
         window.onload = function () {
             const savedTheme = localStorage.getItem('theme') || 'orthodox';
-            document.getElementById('theme-select').value = savedTheme;
             setTheme(savedTheme);
         };
     </script>
     <style>
-        .header {
+        body {
+            font-family: 'Ruslan Display', cursive;
             text-align: center;
-            border-bottom: 1px solid #FCD801;
         }
-
-        .header img {
-            width: 50px;
-            height: auto;
-        }
-
-        .nav-bar {
-            background-color: inherit;
-            padding: 5px;
-            border-bottom: 1px solid #FCD801;
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9em;
-        }
-
-        .nav-bar a {
-            margin: 0 5px;
-        }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            text-align: center;
         }
-
-        .content-box {
-            margin-top: 20px;
-        }
-
         .content-box h2 {
             font-size: 2em;
             margin-bottom: 10px;
         }
-
         .content-box p {
             font-size: 1.2em;
             line-height: 1.5;
         }
-
         .content-box a {
             color: #FCD801;
             text-decoration: underline;
         }
-
         .content-box a:hover {
             color: #EBEBEB;
         }
-
         img {
             max-width: 100%;
             height: auto;
             border-radius: 10px;
             margin: 20px 0;
         }
-
-        select {
-            font-family: 'Ruslan Display', cursive;
-            font-size: 0.9em;
-        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <img src="logo.png" alt="Гойдапедия Логотип">
-        <h1>Гойдапедия</h1>
-        <p>Истина V послѣдней инстанции</p>
-    </div>
-    <div class="nav-bar">
-        <div>
-            <a href="index.html">Главная</a>
-            <a href="about.html">О Гойдапедии</a>
-            <a href="stas.html">Библия</a>
-        </div>
-        <div>
-            <select id="theme-select" onchange="setTheme(this.value)">
-                <option value="orthodox">Православная тѣма</option>
-                <option value="dark">Тьмная тѣма</option>
-                <option value="light">Свѣтлая тѣма</option>
-            </select>
-        </div>
-    </div>
     <div class="container">
         <div class="content-box">
-            <h2>404 - Страница не обрѣтена</h2>
-            <p>О, братiе! Сiя страница, яко градъ Китежъ, сокрыта отъ очiю людскихъ. Не вѣдомо, враги ли православныя правды ея утаили, или Божiимъ промысломъ оная въ пучинѣ невѣдомости погребена бысть. Гойда глаголати не можемъ зде, ибо путь затворенъ. Въспятъ на <a href="index.html">главную страницу</a> грядѣ, дабы духъ славянскiй крѣпити и правду зрити!</p>
+            <h2>404 - Страница не найдена</h2>
+            <p>О, братья и сёстры! Сия страница, как град Китеж, скрылась от наших глаз. Быть может, её утаили враги правды, а быть может, промыслом Божиим она исчезла. Мы не можем сказать наверняка, но путь сюда закрыт. Вернитесь на <a href="index.html">главную страницу</a>, чтобы укрепить дух православный и следовать путём истины.</p>
             <img src="photo_2025-03-22_20-32-38.jpg" alt="Православная икона">
-            <p><small>Икона православная, во славу Божiю</small></p>
+            <p><small>Во славу Божию</small></p>
         </div>
     </div>
 </body>
