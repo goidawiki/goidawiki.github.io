@@ -14,10 +14,10 @@
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://goidawiki.github.io/404">
     <link rel="icon" type="image/png" href="logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Ruslan Display', cursive;
+            font-family: 'Old Standard TT', serif;
             background: linear-gradient(to bottom, #5B0E02, #3A0904, #250601);
             color: #FCD801;
             margin: 0;
@@ -26,6 +26,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
         }
         .container {
             max-width: 1200px;
@@ -35,29 +36,12 @@
             flex-direction: row;
             align-items: center;
             justify-content: center;
-            gap: 20px;
+            gap: 30px;
             box-sizing: border-box;
-        }
-        .content-box {
-            flex: 1;
-            text-align: left;
-        }
-        .content-box p {
-            font-size: 1.2em;
-            line-height: 1.5;
-            margin: 0;
-        }
-        .content-box a {
-            color: #FCD801;
-            text-decoration: underline;
-        }
-        .content-box a:hover {
-            color: #ffffff;
-        }
-        .content-box .quote {
-            font-style: italic;
-            margin-top: 10px;
-            font-size: 1em;
+            background: rgba(0, 0, 0, 0.2);
+            border: 2px solid #FCD801;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(252, 216, 1, 0.3);
         }
         .image-box {
             flex: 0 0 auto;
@@ -71,15 +55,43 @@
             height: auto;
             border-radius: 10px;
             display: block;
+            border: 3px solid #FCD801;
+            box-shadow: 0 0 8px rgba(252, 216, 1, 0.5);
         }
         .image-box p {
-            font-size: 0.9em;
-            margin: 5px 0 0 0;
+            font-family: 'Ruslan Display', cursive;
+            font-size: 1em;
+            margin: 10px 0 0 0;
+            text-align: center;
+        }
+        .content-box {
+            flex: 1;
+            text-align: left;
+        }
+        .content-box p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .content-box a {
+            color: #FCD801;
+            text-decoration: none;
+            border-bottom: 1px dashed #FCD801;
+        }
+        .content-box a:hover {
+            color: #ffffff;
+            border-bottom: 1px solid #ffffff;
+        }
+        .content-box .quote {
+            font-style: italic;
+            margin-top: 15px;
+            font-size: 1em;
+            opacity: 0.9;
         }
         @media (max-width: 1024px) {
             .container {
                 padding: 15px;
-                gap: 15px;
+                gap: 20px;
             }
             .content-box p {
                 font-size: 1.1em;
@@ -92,6 +104,7 @@
             .container {
                 flex-direction: column;
                 padding: 10px;
+                border-width: 1px;
             }
             .content-box {
                 text-align: center;
@@ -117,20 +130,20 @@
                 width: 120px;
             }
             .image-box p {
-                font-size: 0.8em;
+                font-size: 0.9em;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="content-box">
-            <p>О, братья и сёстры! Сия страница, как град Китеж, скрылась от наших глаз. Быть может, её утаили враги правды, а быть может, промыслом Божиим она исчезла. Мы не можем сказать наверняка, но путь сюда закрыт. Вернитесь на <a href="index.html">главная страница</a>, чтобы укрепить дух православный и следовать путём истины.</p>
-            <p class="quote">"От Стахия Васильева 1:3 Нервно Светлана"</p>
-        </div>
         <div class="image-box">
             <a href="https://goidawiki.github.io"><img src="https://goidawiki.github.io/photo_2025-03-22_20-32-38.jpg" alt="Православная икона"></a>
             <p><small>Во славу Божию</small></p>
+        </div>
+        <div class="content-box">
+            <p>О, братья и сёстры! Сия страница, как град Китеж, скрылась от наших глаз. Быть может, её утаили враги правды, а быть может, промыслом Божиим она исчезла. Мы не можем сказать наверняка, но путь сюда закрыт. Вернитесь на <a href="index.html">главная страница</a>, чтобы укрепить дух православный и следовать путём истины.</p>
+            <p class="quote">"От Стахия Васильева 1:3 Нервно Светлана"</p>
         </div>
     </div>
 </body>
