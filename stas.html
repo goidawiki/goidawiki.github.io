@@ -136,20 +136,17 @@
         p {
             margin: 10px 0;
         }
-        .font-toggle {
+        .font-toggle-link {
             display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            background: #D4AF37;
-            color: #2F1B0F;
-            border: 1px solid #FCD801;
-            border-radius: 5px;
-            font-size: 1em;
-            cursor: pointer;
             text-align: center;
+            color: #FCD801;
+            font-size: 1em;
+            text-decoration: underline;
+            margin: 20px 0;
+            cursor: pointer;
         }
-        .font-toggle:hover {
-            background: #FCD801;
+        .font-toggle-link:hover {
+            text-shadow: 0 0 5px #FCD801;
         }
     </style>
     <script>
@@ -168,18 +165,18 @@
         }
 
         function toggleFont() {
-            const button = document.getElementById('font-toggle');
+            const link = document.getElementById('font-toggle');
             const body = document.body;
             const verseNumbers = document.querySelectorAll('.verse-number');
 
-            if (button.textContent === 'Версия для нечестивых') {
+            if (link.textContent === 'Версия для нечестивых') {
                 body.style.fontFamily = "'Ruslan Display', cursive";
                 verseNumbers.forEach(num => num.style.fontFamily = "'Ruslan Display', cursive");
-                button.textContent = 'Версия для праведных';
+                link.textContent = 'Версия для праведных';
             } else {
                 body.style.fontFamily = "'StaroUspenskaya', sans-serif";
                 verseNumbers.forEach(num => num.style.fontFamily = "'Ruslan Display', cursive");
-                button.textContent = 'Версия для нечестивых';
+                link.textContent = 'Версия для нечестивых';
             }
         }
     </script>
@@ -264,7 +261,7 @@
                 <img src="https://i.imgur.com/47wfDvT.jpeg" alt="Скрижали пророка Стахия" loading="lazy" itemprop="image">
                 <figcaption class="caption">Из Архивов Гойдапедии</figcaption>
             </figure>
-            <button id="font-toggle" class="font-toggle" onclick="toggleFont()">Версия для нечестивых</button>
+            <a href="#" id="font-toggle" class="font-toggle-link" onclick="toggleFont(); return false;">Версия для нечестивых</a>
             <div class="footer-link">
                 <a href="index.html" rel="home">К Началу</a>
             </div>
