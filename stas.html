@@ -3,31 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Библия - Гойдапедия</title>
+    <meta name="description" content="Священное Писание Гойдапедии — пророчества Стахия Васильева о Гойде, славе и борьбе с врагами. Читайте скрижали и укрепляйте дух.">
+    <meta name="keywords" content="Гойдапедия, Стахий Васильев, Гойда, православное писание, пророчества, Россия, Украина, СВО">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Гойдапедия">
+    <title>Скрижали Стахия - Священное Писание Гойдапедии</title>
     <link rel="icon" type="image/png" href="logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script>
-        function setTheme(theme) {
-            if (theme === 'orthodox') {
-                document.body.style.backgroundColor = '#DB1C0F';
-                document.body.style.color = '#FCD801';
-                document.querySelector('.header').style.borderBottomColor = '#FCD801';
-                document.querySelector('.nav-bar').style.borderBottomColor = '#FCD801';
-            } else if (theme === 'dark') {
-                document.body.style.backgroundColor = '#202020';
-                document.body.style.color = '#EBEBEB';
-                document.querySelector('.header').style.borderBottomColor = '#EBEBEB';
-                document.querySelector('.nav-bar').style.borderBottomColor = '#EBEBEB';
-            } else if (theme === 'light') {
-                document.body.style.backgroundColor = '#EBEBEB';
-                document.body.style.color = '#202020';
-                document.querySelector('.header').style.borderBottomColor = '#202020';
-                document.querySelector('.nav-bar').style.borderBottomColor = '#202020';
-            }
-            localStorage.setItem('theme', theme);
+    <style>
+        body {
+            font-family: 'Ruslan Display', cursive;
+            background: linear-gradient(to bottom, #2F1B0F, #1A0F0A);
+            color: #D4AF37;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
         }
-
+        .book-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #D4AF37;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .header {
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #D4AF37;
+        }
+        .header img {
+            max-width: 80px;
+            border: 2px solid #D4AF37;
+            border-radius: 50%;
+        }
+        .header h1 {
+            font-size: 2em;
+            margin: 10px 0;
+            text-shadow: 1px 1px 3px #000;
+        }
+        .nav-menu {
+            text-align: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #D4AF37;
+            margin-bottom: 20px;
+        }
+        .nav-menu a {
+            color: #D4AF37;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+        .nav-menu a:hover {
+            text-shadow: 0 0 5px #D4AF37;
+        }
+        .chapter {
+            margin: 20px 0;
+        }
+        .chapter h2 {
+            color: #FCD801;
+            text-align: center;
+            padding-bottom: 5px;
+            font-size: 1.8em;
+        }
+        .chapter h3 {
+            color: #FCD801;
+            text-align: center;
+            padding-bottom: 5px;
+            font-size: 1.5em;
+        }
+        .verse {
+            display: flex;
+            margin: 8px 0;
+        }
+        .verse-number {
+            font-weight: bold;
+            color: #FCD801;
+            margin-right: 10px;
+            min-width: 40px;
+            text-align: right;
+        }
+        .verse-text {
+            flex: 1;
+        }
+        img {
+            display: block;
+            max-width: 60%;
+            margin: 15px auto;
+            border: 1px solid #D4AF37;
+        }
+        .caption {
+            text-align: center;
+            font-size: 0.8em;
+            color: #FCD801;
+            margin-top: -5px;
+        }
+        .footer-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .footer-link a {
+            color: #D4AF37;
+            font-size: 1.1em;
+            text-decoration: none;
+        }
+        .disclaimer {
+            text-align: center;
+            font-style: italic;
+            color: #FCD801;
+            margin: 10px 0;
+            font-size: 0.9em;
+        }
+        p {
+            margin: 10px 0;
+        }
+    </style>
+    <script>
         function randomArticle() {
             const articles = [
                 'russia.html',
@@ -41,73 +132,85 @@
             const randomIndex = Math.floor(Math.random() * articles.length);
             window.location.href = articles[randomIndex];
         }
-
-        window.onload = function() {
-            const savedTheme = localStorage.getItem('theme') || 'orthodox';
-            document.getElementById('theme-select').value = savedTheme;
-            setTheme(savedTheme);
-        };
     </script>
 </head>
 <body>
-    <div class="header">
-        <img src="logo.png" alt="Гойдапедия Логотип">
-        <h1>Гойдапедия</h1>
-    </div>
-    <div class="nav-bar">
-        <div>
-            <a href="index.html">Главная</a>
-            <a href="#" onclick="randomArticle()">Случайная статья</a>
-            <a href="about.html">О Гойдапедии</a>
-            <a href="stas.html">Библия</a>
-        </div>
-        <div>
-            <select id="theme-select" onchange="setTheme(this.value)">
-                <option value="orthodox">Православная тема</option>
-                <option value="dark">Тёмная тема</option>
-                <option value="light">Светлая тема</option>
-            </select>
-        </div>
-    </div>
-    <div class="container">
-        <div class="sidebar">
-            <h3>Содержание</h3>
-            <ul>
-                <li><a href="russia.html">Россия</a></li>
-                <li><a href="ukraine.html">Украина</a></li>
-                <li><a href="orthodoxy.html">ПраVослаVие</a></li>
-                <li><a href="goyda.html">Гойда</a></li>
-                <li><a href="putin.html">Владимир Путин</a></li>
-                <li><a href="zelensky.html">Владимир Зеленский</a></li>
-                <li><a href="svo.html">СВО</a></li>
-                <li><a href="stas.html">Библия</a></li>
-            </ul>
-        </div>
-        <div class="main-content">
-            <h1>Библия</h1>
-            <p>Библия Гойдапедии — это священный текст, наполненный мудростью и откровениями, которые ведут нас к гойде и славе. Здесь собраны слова пророков и святых мужей, чьи наставления помогают противостоять врагам и укреплять дух.</p>
-            <h3>Стахий Васильев</h3>
-            <div class="disclaimer">Внимание! Текст содержит ненормативную лексику</div>
-            <p>Стахий Васильев — пророк современной гойды, чьи слова подобны молниям, разящим либералов и укрепляющим веру. Вот его священные писания:</p>
-            <ul>
-                <li><strong>От Стахия Васильева 1:1</strong> Если хохол подставил рот, то ебать надо в жопу.</li>
-                <li><strong>От Стахия Васильева 1:2</strong> Яко господь хранит меня, так и расхуячит он суджу.</li>
-                <li><strong>От Стахия Васильева 1:3</strong> неважно Светлана.</li>
-                <li><strong>От Стахия Васильева 1:4</strong> Слыш ты школьник рот свой закрой, если я пою, то я пою как хочу! А тебя никто не спрашивал.</li>
-                <li><strong>От Стахия Васильева 1:5</strong> Нахуй ты нападаешь, ну емае! Ну мужики не стукайте.</li>
-                <li><strong>От Стахия Васильева 1:6</strong> Гойда! Z! Либералы сосать!</li>
-                <li><strong>От Стахия Васильева 1:7</strong> Каждый уважаемый мужчина гей! Современные мужчины все геи, и я тоже. Это тебе дают разбан на твиче, Ютубе и т.д.</li>
-                <li><strong>От Стахия Васильева 1:8</strong> Не ешьте шавуху с вокзала... Это пиздец сру уже 10 час.</li>
-                <li><strong>От Стахия Васильева 1:9</strong> Посрал, очко порвалось... Надеюсь не повторится судьба Димы утки.</li>
-                <li><strong>От Стахия Васильева 1:10</strong> Пизда пасыки, с кишки кровь течет... Умираю. Давайте, хватайте! Я святой!</li>
-            </ul>
-            <p>Слова Стахия — это не просто речи, а руководство к действию, данное нам свыше.</p>
-            <img src="https://i.imgur.com/Vnv2cFt.jpeg" alt="Стахий Васильев - Пророк Гойды">
-            <p><small>Источник: Архивы Гойдапедии</small></p>
-            <img src="https://i.imgur.com/47wfDvT.jpeg" alt="Священные писания Стахия">
-            <p><small>Источник: Архивы Гойдапедии</small></p>
-            <a href="index.html">НаZад на главную</a>
-        </div>
+    <div class="book-container">
+        <header class="header">
+            <img src="logo.png" alt="Логотип Гойдапедии">
+            <h1>Священное Писание Гойдапедии</h1>
+        </header>
+        <nav class="nav-menu">
+            <a href="index.html">Начало</a>
+            <a href="#" onclick="randomArticle()">Случайное Слово</a>
+            <a href="about.html">О Писании</a>
+            <a href="russia.html">Русь</a>
+            <a href="ukraine.html">Украина</a>
+            <a href="orthodoxy.html">ПраVослаVие</a>
+            <a href="goyda.html">Гойда</a>
+            <a href="putin.html">Владимир Путин</a>
+            <a href="zelensky.html">Владимир Зеленский</a>
+            <a href="svo.html">СВО</a>
+            <a href="stas.html">Стахий</a>
+        </nav>
+        <main class="chapter">
+            <h2>Скрижали Стахия</h2>
+            <p>Сия Книга есть сокровище мудрости и гласов свыше, что ведут к Гойде и славе. Здесь слова пророков и святых мужей, коими крепится дух и враги посрамляются.</p>
+            <h3>Пророчества Стахия Васильева</h3>
+            <div class="disclaimer">Сие сурово и дерзновенно</div>
+            <p>Стахий Васильев, пророк Гойды, глаголы его яко громы, что либералов разят и верных возносят. Вот писания его:</p>
+            <section class="chapter">
+                <h4>Глава Первая</h4>
+                <div class="verse">
+                    <span class="verse-number">1:1</span>
+                    <span class="verse-text">Если хохол уста открыл, поражай его в срам.</span>
+                </div>
+                <div class="verse">
+                    <span class="verse-number">1:2</span>
+                    <span class="verse-text">Господь хранит мя, и судию неправедного сокрушит.</span>
+                </div>
+                <div class="verse">
+                    <span class="verse-number">1:3</span>
+                    <span class="verse-text">Нервно Светлана.</span>
+                </div>
+                <div class="verse">
+                    <span class="verse-number">1:4</span>
+                    <span class="verse-text">Слыши, отрок, молчи, ибо я пою, как желаю, и не тебе судить.</span>
+                </div>
+                <div class="verse">
+                    <span class="verse-number">1:5</span>
+                    <span class="verse-text">За что нападаешь, безумный? Мужи, не бейте.</span>
+                </div>
+                <div class="verse">
+                    <span class="verse-number">1:6</span>
+                    <span class="verse-text">Гойда! Z! Либералы да падут!</span>
+                </div>
+                <div class="verse">
+                    <span class="verse-number">1:7</span>
+                    <span class="verse-text">Всяк муж славный гей! Ныне все геи, и я с ними. Сие свобода в Твиче и Ютубе.</span>
+                </div>
+                <div class="verse">
+                    <span class="verse-number">1:8</span>
+                    <span class="verse-text">Не вкушай шавухи вокзальной, сие пагуба, 10 час стражду.</span>
+                </div>
+                <div class="verse">
+                    <span class="verse-number">1:9</span>
+                    <span class="verse-text">Извергнул скверну, очко разодрано... Молю, да не судьба Димы Утки.</span>
+                </div>
+                <div class="verse">
+                    <span class="verse-number">1:10</span>
+                    <span class="verse-text">Погибель пасыкам, кровь из чрева... Умираю. Примите, ибо свят!</span>
+                </div>
+            </section>
+            <p>Слова Стахия — не токмо речи, но заповеди свыше.</p>
+            <img src="https://i.imgur.com/Vnv2cFt.jpeg" alt="Портрет Стахия Васильева, пророка Гойды" loading="lazy">
+            <p class="caption">Из Архивов Гойдапедии</p>
+            <img src="https://i.imgur.com/47wfDvT.jpeg" alt="Скрижали пророка Стахия" loading="lazy">
+            <p class="caption">Из Архивов Гойдапедии</p>
+            <div class="footer-link">
+                <a href="index.html">К Началу</a>
+            </div>
+        </main>
     </div>
 </body>
 </html>
