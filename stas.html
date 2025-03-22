@@ -1,14 +1,28 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" prefix="og: http://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Священное Писание Гойдапедии — пророчества Стахия Васильева о Гойде, славе и борьбе с врагами. Читайте скрижали и укрепляйте дух.">
-    <meta name="keywords" content="Гойдапедия, Стахий Васильев, Гойда, православное писание, пророчества, Россия, Украина, СВО">
+    <meta name="description" content="Скрижали Стахия Васильева из Священного Писания Гойдапедии. Пророчества о Гойде, славе и борьбе с врагами для укрепления духа.">
+    <meta name="keywords" content="Гойдапедия, Стахий Васильев, Гойда, православное писание, пророчества, Россия, Украина, СВО, священные скрижали">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Гойдапедия">
+    <meta name="revisit-after" content="7 days">
+    <meta name="theme-color" content="#2F1B0F">
+    <meta property="og:title" content="Скрижали Стахия - Священное Писание Гойдапедии">
+    <meta property="og:description" content="Пророчества Стахия Васильева о Гойде и славе. Узнайте священные слова для борьбы с врагами и укрепления духа.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://goidawiki.github.io/stas.html">
+    <meta property="og:image" content="https://i.imgur.com/Vnv2cFt.jpeg">
+    <meta property="og:site_name" content="Гойдапедия">
+    <meta property="og:locale" content="ru_RU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Скрижали Стахия - Священное Писание Гойдапедии">
+    <meta name="twitter:description" content="Пророчества Стахия Васильева о Гойде и славе. Узнайте священные слова для борьбы с врагами.">
+    <meta name="twitter:image" content="https://i.imgur.com/Vnv2cFt.jpeg">
     <title>Скрижали Стахия - Священное Писание Гойдапедии</title>
-    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" href="logo.png" sizes="32x32">
+    <link rel="canonical" href="https://goidawiki.github.io/stas.html">
     <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
     <style>
         @font-face {
@@ -122,6 +136,21 @@
         p {
             margin: 10px 0;
         }
+        .font-toggle {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background: #D4AF37;
+            color: #2F1B0F;
+            border: 1px solid #FCD801;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            text-align: center;
+        }
+        .font-toggle:hover {
+            background: #FCD801;
+        }
     </style>
     <script>
         function randomArticle() {
@@ -137,18 +166,34 @@
             const randomIndex = Math.floor(Math.random() * articles.length);
             window.location.href = articles[randomIndex];
         }
+
+        function toggleFont() {
+            const button = document.getElementById('font-toggle');
+            const body = document.body;
+            const verseNumbers = document.querySelectorAll('.verse-number');
+
+            if (button.textContent === 'Версия для нечестивых') {
+                body.style.fontFamily = "'Ruslan Display', cursive";
+                verseNumbers.forEach(num => num.style.fontFamily = "'Ruslan Display', cursive");
+                button.textContent = 'Версия для праведных';
+            } else {
+                body.style.fontFamily = "'StaroUspenskaya', sans-serif";
+                verseNumbers.forEach(num => num.style.fontFamily = "'Ruslan Display', cursive");
+                button.textContent = 'Версия для нечестивых';
+            }
+        }
     </script>
 </head>
 <body>
     <div class="book-container">
         <header class="header">
-            <img src="logo.png" alt="Логотип Гойдапедии">
+            <img src="logo.png" alt="Логотип Гойдапедии" loading="lazy">
             <h1>Священное Писание Гойдапедии</h1>
         </header>
         <nav class="nav-menu">
-            <a href="index.html">Начало</a>
+            <a href="index.html" rel="home">Начало</a>
             <a href="#" onclick="randomArticle()">Случайное Слово</a>
-            <a href="about.html">О Писании</a>
+            <a href="about.html" rel="about">О Писании</a>
             <a href="russia.html">Русь</a>
             <a href="ukraine.html">Украина</a>
             <a href="orthodoxy.html">ПраVослаVие</a>
@@ -156,15 +201,18 @@
             <a href="putin.html">Владимир Путин</a>
             <a href="zelensky.html">Владимир Зеленский</a>
             <a href="svo.html">СВО</a>
-            <a href="stas.html">Стахий</a>
+            <a href="stas.html" rel="bookmark">Стахий</a>
         </nav>
-        <main class="chapter">
-            <h2>Скрижали Стахия</h2>
-            <p>Сия Книга есть сокровище мудрости и гласов свыше, что ведут к Гойде и славе. Здесь слова пророков и святых мужей, коими крепится дух и враги посрамляются.</p>
+        <main class="chapter" itemscope itemtype="http://schema.org/Article">
+            <meta itemprop="datePublished" content="2025-03-22">
+            <meta itemprop="dateModified" content="2025-03-22">
+            <meta itemprop="publisher" content="Гойдапедия">
+            <h2 itemprop="headline">Скрижали Стахия</h2>
+            <p itemprop="description">Сия Книга есть сокровище мудрости и гласов свыше, что ведут к Гойде и славе. Здесь слова пророков и святых мужей, коими крепится дух и враги посрамляются.</p>
             <h3>Пророчества Стахия Васильева</h3>
             <div class="disclaimer">Сие сурово и дерзновенно</div>
             <p>Стахий Васильев, пророк Гойды, глаголы его яко громы, что либералов разят и верных возносят. Вот писания его:</p>
-            <section class="chapter">
+            <section class="chapter" itemprop="articleBody">
                 <h4>Глава Первая</h4>
                 <div class="verse">
                     <span class="verse-number">1:1</span>
@@ -176,7 +224,7 @@
                 </div>
                 <div class="verse">
                     <span class="verse-number">1:3</span>
-                    <span class="verse-text">неважно Светлана.</span>
+                    <span class="verse-text">Нервно Светлана.</span>
                 </div>
                 <div class="verse">
                     <span class="verse-number">1:4</span>
@@ -208,12 +256,17 @@
                 </div>
             </section>
             <p>Слова Стахия — не токмо речи, но заповеди свыше.</p>
-            <img src="https://i.imgur.com/Vnv2cFt.jpeg" alt="Портрет Стахия Васильева, пророка Гойды" loading="lazy">
-            <p class="caption">Из Архивов Гойдапедии</p>
-            <img src="https://i.imgur.com/47wfDvT.jpeg" alt="Скрижали пророка Стахия" loading="lazy">
-            <p class="caption">Из Архивов Гойдапедии</p>
+            <figure>
+                <img src="https://i.imgur.com/Vnv2cFt.jpeg" alt="Портрет Стахия Васильева, пророка Гойды" loading="lazy" itemprop="image">
+                <figcaption class="caption">Из Архивов Гойдапедии</figcaption>
+            </figure>
+            <figure>
+                <img src="https://i.imgur.com/47wfDvT.jpeg" alt="Скрижали пророка Стахия" loading="lazy" itemprop="image">
+                <figcaption class="caption">Из Архивов Гойдапедии</figcaption>
+            </figure>
+            <button id="font-toggle" class="font-toggle" onclick="toggleFont()">Версия для нечестивых</button>
             <div class="footer-link">
-                <a href="index.html">К Началу</a>
+                <a href="index.html" rel="home">К Началу</a>
             </div>
         </main>
     </div>
