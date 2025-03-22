@@ -14,28 +14,16 @@
                 document.body.style.color = '#FCD801';
                 document.querySelector('.header').style.borderBottomColor = '#FCD801';
                 document.querySelector('.nav-bar').style.borderBottomColor = '#FCD801';
-                document.querySelectorAll('.content-box').forEach(box => {
-                    box.style.borderColor = '#FCD801';
-                    box.style.backgroundColor = 'rgba(252, 216, 1, 0.1)';
-                });
             } else if (theme === 'dark') {
                 document.body.style.backgroundColor = '#202020';
                 document.body.style.color = '#EBEBEB';
                 document.querySelector('.header').style.borderBottomColor = '#EBEBEB';
                 document.querySelector('.nav-bar').style.borderBottomColor = '#EBEBEB';
-                document.querySelectorAll('.content-box').forEach(box => {
-                    box.style.borderColor = '#EBEBEB';
-                    box.style.backgroundColor = 'rgba(235, 235, 235, 0.1)';
-                });
             } else if (theme === 'light') {
                 document.body.style.backgroundColor = '#EBEBEB';
                 document.body.style.color = '#202020';
                 document.querySelector('.header').style.borderBottomColor = '#202020';
                 document.querySelector('.nav-bar').style.borderBottomColor = '#202020';
-                document.querySelectorAll('.content-box').forEach(box => {
-                    box.style.borderColor = '#202020';
-                    box.style.backgroundColor = 'rgba(32, 32, 32, 0.1)';
-                });
             }
             localStorage.setItem('theme', theme);
         }
@@ -98,7 +86,7 @@
         </div>
         <div class="main-content">
             <!-- Блок с дисклеймером -->
-            <div class="content-box disclaimer">
+            <div style="background: linear-gradient(to right, #FFFFFF 33%, #003399 33%, #003399 66%, #FF0000 66%); color: black; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
                 <h3>Откровение Гойдапедии</h3>
                 <p>О, странник, внимающий гласу слаVянской праVды! Внемли сему предостережению:</p>
                 <ul style="text-align: left;">
