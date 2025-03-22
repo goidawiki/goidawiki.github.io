@@ -1,0 +1,110 @@
+body {
+    background-color: #DB1C0F;
+    color: #FCD801;
+    font-family: 'Ruslan Display', cursive;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+a { 
+    color: inherit; 
+    text-decoration: none; 
+    transition: color 0.3s ease;
+}
+a:hover { 
+    color: #FFD700; 
+    text-decoration: underline;
+}
+.header {
+    background-color: inherit;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 2px solid #FCD801;
+}
+.header img { 
+    width: 60px; 
+    height: auto; 
+    margin-bottom: 10px;
+}
+h1, h2, h3 {
+    margin: 0;
+    font-weight: normal;
+}
+p {
+    margin: 10px 0;
+}
+.nav-bar {
+    background-color: inherit;
+    padding: 10px;
+    border-bottom: 2px solid #FCD801;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+}
+.nav-bar a {
+    margin: 0 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.nav-bar a:hover {
+    background-color: rgba(252, 216, 1, 0.2);
+}
+.nav-bar select {
+    font-family: 'Ruslan Display', cursive;
+    font-size: 0.9em;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(252, 216, 1, 0.1);
+    border: 1px solid #FCD801;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.sidebar {
+    flex: 1 1 20%;
+    padding: 10px;
+    min-width: 200px;
+}
+.main-content {
+    flex: 1 1 75%;
+    padding: 10px;
+}
+.content-box {
+    background-color: rgba(252, 216, 1, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 2px solid #FCD801;
+    border-radius: 10px;
+}
+img { 
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 10px;
+}
+@media (max-width: 768px) {
+    .sidebar, .main-content { 
+        flex: 1 1 100%; 
+    }
+    .nav-bar { 
+        flex-direction: column; 
+        text-align: center; 
+    }
+    .nav-bar a, .nav-bar select { 
+        margin: 10px 0; 
+    }
+}
+.highlight {
+    color: #FFD700;
+    font-weight: bold;
+}
+.quote {
+    font-style: italic;
+    color: #FFA500;
+    margin: 20px 0;
+}

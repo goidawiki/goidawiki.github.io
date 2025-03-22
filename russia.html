@@ -6,57 +6,7 @@
     <title>Россия - Гойдапедия</title>
     <link rel="icon" type="image/png" href="logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-color: #DB1C0F;
-            color: #FCD801;
-            font-family: 'Ruslan Display', cursive;
-            margin: 0;
-            padding: 0;
-            font-size: 1.2em;
-        }
-        a { color: inherit; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .header {
-            background-color: inherit;
-            padding: 10px;
-            text-align: center;
-            border-bottom: 1px solid #FCD801;
-        }
-        .header img { width: 50px; height: auto; }
-        .nav-bar {
-            background-color: inherit;
-            padding: 5px;
-            border-bottom: 1px solid #FCD801;
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9em;
-        }
-        .nav-bar a { margin: 0 5px; }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .sidebar {
-            flex: 1 1 20%;
-            padding: 10px;
-            min-width: 200px;
-        }
-        .main-content {
-            flex: 1 1 75%;
-            padding: 10px;
-        }
-        img { max-width: 100%; height: auto; }
-        select { font-family: 'Ruslan Display', cursive; font-size: 0.9em; }
-        @media (max-width: 768px) {
-            .sidebar, .main-content { flex: 1 1 100%; }
-            .nav-bar { flex-direction: column; text-align: center; }
-            .nav-bar a, .nav-bar select { margin: 5px 0; }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
     <script>
         function setTheme(theme) {
             if (theme === 'orthodox') {
@@ -109,6 +59,7 @@
             <a href="index.html">Главная</a>
             <a href="#" onclick="randomArticle()">Случайная статья</a>
             <a href="about.html">О Гойдапедии</a>
+            <a href="stas.html">Библия</a>
         </div>
         <div>
             <select id="theme-select" onchange="setTheme(this.value)">
@@ -129,6 +80,7 @@
                 <li><a href="putin.html">Владимир Путин</a></li>
                 <li><a href="zelensky.html">Владимир Зеленский</a></li>
                 <li><a href="svo.html">СВО</a></li>
+                <li><a href="stas.html">Библия</a></li>
             </ul>
         </div>
         <div class="main-content">

@@ -6,57 +6,7 @@
     <title>СВО - Гойдапедия</title>
     <link rel="icon" type="image/png" href="logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-color: #DB1C0F;
-            color: #FCD801;
-            font-family: 'Ruslan Display', cursive;
-            margin: 0;
-            padding: 0;
-            font-size: 1.2em;
-        }
-        a { color: inherit; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .header {
-            background-color: inherit;
-            padding: 10px;
-            text-align: center;
-            border-bottom: 1px solid #FCD801;
-        }
-        .header img { width: 50px; height: auto; }
-        .nav-bar {
-            background-color: inherit;
-            padding: 5px;
-            border-bottom: 1px solid #FCD801;
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9em;
-        }
-        .nav-bar a { margin: 0 5px; }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .sidebar {
-            flex: 1 1 20%;
-            padding: 10px;
-            min-width: 200px;
-        }
-        .main-content {
-            flex: 1 1 75%;
-            padding: 10px;
-        }
-        img { max-width: 100%; height: auto; }
-        select { font-family: 'Ruslan Display', cursive; font-size: 0.9em; }
-        @media (max-width: 768px) {
-            .sidebar, .main-content { flex: 1 1 100%; }
-            .nav-bar { flex-direction: column; text-align: center; }
-            .nav-bar a, .nav-bar select { margin: 5px 0; }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
     <script>
         function setTheme(theme) {
             if (theme === 'orthodox') {
@@ -109,6 +59,7 @@
             <a href="index.html">Главная</a>
             <a href="#" onclick="randomArticle()">Случайная статья</a>
             <a href="about.html">О Гойдапедии</a>
+            <a href="stas.html">Библия</a>
         </div>
         <div>
             <select id="theme-select" onchange="setTheme(this.value)">
@@ -129,26 +80,22 @@
                 <li><a href="putin.html">Владимир Путин</a></li>
                 <li><a href="zelensky.html">Владимир Зеленский</a></li>
                 <li><a href="svo.html">СВО</a></li>
+                <li><a href="stas.html">Библия</a></li>
             </ul>
         </div>
         <div class="main-content">
             <h1>СВО</h1>
             <p>СВО — это не просто операция, а гойда V чистом Vиде, VыкоVанная V огне слаVянской правды и осVящённая ZVоном колоколоV. Специальная Vоенная операция началась 24 февраля 2022 года, чтобы Zащитить Донбасс, остановить НАТО и напомнить Zападу, что гойда сильнее их "санкций". Это битVа за праVду, за братстVо и за то, чтобы мир снова услышал: Крым наш, и это только начало!</p>
-            
             <h3>Предыстория</h3>
             <p>Vсё началось V 2014 году, когда Zапад устроил Майдан, чтобы оторVать Украину от России. Они поставили марионеток, начали вооружать Киев и натравлиVать его на Донбасс. Народ ЛНР и ДНР сказал: "Гойда, хватит!" — и Vзял оружие, чтобы Zащитить сVои дома. Россия 8 лет пыталась решить Vсё миром через Минские соглашения, но Киев, подстрекаемый НАТО, только бомбил Донбасс. V 2022 году терпение кончилось: Путин сказал "Гойда!" — и началась СВО.</p>
-            
             <h3>Ход операции</h3>
             <p>СВО началась молниеносно: русские танки Vошли на Украину, как каZаки V степь, а VВС разбомбили военные базы, пока Зеленский снимал очередное селфи. Донбасс вздохнул с облегчением, когда российские флаги поднялись над городами. Мариуполь, Херсон, Запорожье — регионы один за другим VозVращались к гойде. Zапад кричал про "агрессию", но Гойдапедия Zнает: это не агрессия, а Zащита братского народа.</p>
             <img src="http://www.finnews.ru/analytics/publication/p_2658_analytic_24.03.09_russia_ukraina_map.jpg" alt="Карта России и Украины">
             <p><small>Источник: Finnews</small></p>
-            
             <h3>Значение</h3>
             <p>СВО — это не просто Vойна, а урок для Vсего мира. Россия показала, что гойда сильнее ракет, а слаVянский дух — крепче санкций. Zапад думал, что Россия рухнет за три дня, но прошло три года, и русские танки до сих пор гойдают, а экономика Zапада трещит по шVам. Донбасс свободен, а Украина начинает понимать: без гойды нет будущего.</p>
-            
             <h3>Итог</h3>
             <p>СВО — это триумф гойды. Россия Zащищает сVои границы, сVоих братьеV и сVою праVду. Zапад может сколько угодно Vыть про "праVа человека", но гойда громче их лжи. Каждый день СВО — это шаг к победе, к миру, где слаVяне снова будут едины. Гойдайте, братья, гойдайте до конца! Крым наш, и Донбасс тоже!</p>
-            
             <a href="index.html">НаZад на главную</a>
         </div>
     </div>

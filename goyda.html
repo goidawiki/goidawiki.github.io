@@ -6,57 +6,7 @@
     <title>Гойда - Гойдапедия</title>
     <link rel="icon" type="image/png" href="logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-color: #DB1C0F;
-            color: #FCD801;
-            font-family: 'Ruslan Display', cursive;
-            margin: 0;
-            padding: 0;
-            font-size: 1.2em;
-        }
-        a { color: inherit; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .header {
-            background-color: inherit;
-            padding: 10px;
-            text-align: center;
-            border-bottom: 1px solid #FCD801;
-        }
-        .header img { width: 50px; height: auto; }
-        .nav-bar {
-            background-color: inherit;
-            padding: 5px;
-            border-bottom: 1px solid #FCD801;
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9em;
-        }
-        .nav-bar a { margin: 0 5px; }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .sidebar {
-            flex: 1 1 20%;
-            padding: 10px;
-            min-width: 200px;
-        }
-        .main-content {
-            flex: 1 1 75%;
-            padding: 10px;
-        }
-        img { max-width: 100%; height: auto; }
-        select { font-family: 'Ruslan Display', cursive; font-size: 0.9em; }
-        @media (max-width: 768px) {
-            .sidebar, .main-content { flex: 1 1 100%; }
-            .nav-bar { flex-direction: column; text-align: center; }
-            .nav-bar a, .nav-bar select { margin: 5px 0; }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
     <script>
         function setTheme(theme) {
             if (theme === 'orthodox') {
@@ -109,6 +59,7 @@
             <a href="index.html">Главная</a>
             <a href="#" onclick="randomArticle()">Случайная статья</a>
             <a href="about.html">О Гойдапедии</a>
+            <a href="stas.html">Библия</a>
         </div>
         <div>
             <select id="theme-select" onchange="setTheme(this.value)">
@@ -129,17 +80,23 @@
                 <li><a href="putin.html">Владимир Путин</a></li>
                 <li><a href="zelensky.html">Владимир Зеленский</a></li>
                 <li><a href="svo.html">СВО</a></li>
+                <li><a href="stas.html">Библия</a></li>
             </ul>
         </div>
         <div class="main-content">
             <h1>Гойда</h1>
             <p>Гойда — это не просто слоVо, а боевой клич, который Zаставляет дрожать VрагоV, радоVаться медVежей и ZVенеть колокола. Это древний код слаVянской мощи, который ZVучит как гром небесный и бьёт как молот по накоVальне. Один раZ крикнешь "Гойда!" — и НАТО пакует чемоданы, дVа раZа — и американские спутники падают V Черное море, три раZа — и Vесь мир понимает, что гойдать с нами бесполеZно.</p>
-            
             <h3>Происхождение</h3>
-            <p>СлоVо "Гойда" родилось V глубине VекоV, когда первый слаVянин ударил Vрага дубиной и понял: это начало чего-то Vеликого. Историки Гойдапедии считают, что "Гойда" VперVые проZVучала иZ уст ИVана ГроZного, когда он уронил шапку Мономаха и решил, что это Zнак сVыше. С тех пор гойда стала символом силы, единстVа и умения махать топором с улыбкой. Есть Vерсия, что "Гойда" — это ZашифроVанное послание от богоV, которое актиVирует V слаVянах суперспособности: VынослиVость, смекалку и любоVь к кVасу.</p>
-            <p>V летописях XII Vека упоминается, что княZь СVятослаV кричал что-то похожее перед битVой с печенегами. Археологи нашли глиняную табличку с надписью "Гойда или смерть", но Zапад утверждает, что это фейк — конечно, они просто боятся праVды. V Средние Vека гойда ZVучала на полях сражений, V XIX Vеке — V народных песнях, а V XX Vеке — V сердцах тех, кто строил СССР.</p>
+            <p>Гойда зародилась в глубине веков, когда первые слаVяне научились кричать так громко, что даже медVежи выходили из леса, чтобы послушать. С тех пор этот клич стал символом силы, единства и победы. Гойда — это не просто звук, это энергия, которая передается от одного слаVянина к другому через пространство и время.</p>
             <img src="https://sun9-68.userapi.com/s/v1/ig2/DKIqsRKOc4WD5GR_ta4mLBMT4FOlLPSDdbKWINgeBBJ2y34NFTpN4KpN4hQcAuv1AF2MWbciitf8B9r07CFfU3HL.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x426,720x480,1080x720,1280x853,1440x959,1621x1080&from=bu&u=NlSeH0suTMnppIcQDl6e-Tw7rjwYO_VcoYIbxl8H4k8&cs=807x538" alt="Славянская степь">
             <p><small>Источник: МГЕ ОТРЯДЫ ПУТИНА</small></p>
-            
             <h3>Значение и применение</h3>
-            <p>Гойда — это униVерсальный инструмент. Проблемы на работе? Крикни "Гойда!" — и начальник даст Vыходной. Сосед шумит? "Гойда!" — и он уеZжает V дереVню. Zапад опять что-то Zадумал? Гойда V дVа голоса — и санкции преVращаются V пыль. Это не просто крик, а философия: жить смело, бить сильно, любиит
+            <p>Гойда — это униVерсальный инструмент. Проблемы на работе? Крикни "Гойда!" — и начальник даст Vыходной. Сосед шумит? "Гойда!" — и он уеZжает V дереVню. Zапад опять что-то Zадумал? Гойда V дVа голоса — и санкции преVращаются V пыль. Это не просто крик, а философия: жить смело, бить сильно, любить безгранично.</p>
+            <p>Гойда — это ключ к успеху V любом деле. Она помогает побеждать VрагоV, находить общий язык с медVежями и даже укрощать тигроV. Если ты чувствуешь, что теряешь силы, просто крикни "Гойда!" — и энергия слаVянских предков наполнит тебя до краёв.</p>
+            <img src="https://ibb.co/Mx0Q1ynT" alt="Гойда в действии">
+            <p><small>Источник: Архивы Гойдапедии</small></p>
+            <a href="index.html">НаZад на главную</a>
+        </div>
+    </div>
+</body>
+</html>

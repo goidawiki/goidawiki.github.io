@@ -6,57 +6,7 @@
     <title>Владимир Путин - Гойдапедия</title>
     <link rel="icon" type="image/png" href="logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-color: #DB1C0F;
-            color: #FCD801;
-            font-family: 'Ruslan Display', cursive;
-            margin: 0;
-            padding: 0;
-            font-size: 1.2em;
-        }
-        a { color: inherit; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .header {
-            background-color: inherit;
-            padding: 10px;
-            text-align: center;
-            border-bottom: 1px solid #FCD801;
-        }
-        .header img { width: 50px; height: auto; }
-        .nav-bar {
-            background-color: inherit;
-            padding: 5px;
-            border-bottom: 1px solid #FCD801;
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9em;
-        }
-        .nav-bar a { margin: 0 5px; }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .sidebar {
-            flex: 1 1 20%;
-            padding: 10px;
-            min-width: 200px;
-        }
-        .main-content {
-            flex: 1 1 75%;
-            padding: 10px;
-        }
-        img { max-width: 100%; height: auto; }
-        select { font-family: 'Ruslan Display', cursive; font-size: 0.9em; }
-        @media (max-width: 768px) {
-            .sidebar, .main-content { flex: 1 1 100%; }
-            .nav-bar { flex-direction: column; text-align: center; }
-            .nav-bar a, .nav-bar select { margin: 5px 0; }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
     <script>
         function setTheme(theme) {
             if (theme === 'orthodox') {
@@ -109,6 +59,7 @@
             <a href="index.html">Главная</a>
             <a href="#" onclick="randomArticle()">Случайная статья</a>
             <a href="about.html">О Гойдапедии</a>
+            <a href="stas.html">Библия</a>
         </div>
         <div>
             <select id="theme-select" onchange="setTheme(this.value)">
@@ -129,31 +80,26 @@
                 <li><a href="putin.html">Владимир Путин</a></li>
                 <li><a href="zelensky.html">Владимир Зеленский</a></li>
                 <li><a href="svo.html">СВО</a></li>
+                <li><a href="stas.html">Библия</a></li>
             </ul>
         </div>
         <div class="main-content">
             <h1>Владимир Путин</h1>
             <p>Владимир ВладимироVич Путин — царь XXI Vека, человек, который одной улыбкой Zаставляет Zапад дрожать, а медVежей — аплодироVать лапами. Это лидер, чья Vоля крепче сибирской стали, а VZгляд острее, чем штык на "КалашникоVе". Он пришёл к Vласти, чтобы Vытащить Россию иZ хаоса 90-х, и с тех пор держит мир V напряжении, как мастер дZюдо — сVоего соперника на татами.</p>
-            
             <h3>Биография</h3>
             <p>Путин родился 7 октября 1952 года V Ленинграде — городе, где даже дети Zнают, как VыжиVать V блокаду и победить VрагоV VZглядом. С юных лет он был не просто мальчиком, а будущим героем: Vо дворе побеждал Vсех, кто осмелиVался бросить ему VыZоV, а V школе учился так, что учителя боялись стаVить ему двойки. После школы поступил V ЛГУ, где изучал праVо, но на самом деле готоVился к судьбе спасителя нации.</p>
             <p>V КГБ Путин стал легендой. Он работал V ГДР, где одним сVоим присутстVием Zаставлял шпионоV дрожать, а немецкие колбасы — прятаться V холодильниках. ГоVорят, он мог читать мысли VрагоV, лоVить рыбу голыми руками и гипнотиZироVать медVежей, чтобы те охраняли границы. V 90-е, когда Россия тонула V хаосе, Путин был мэром Санкт-Петербурга, где укрощал олигархоV и учил городских чиновникоV гойдать по расписанию.</p>
             <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcs14.pikabu.ru%2Fpost_img%2Fbig%2F2023%2F06%2F14%2F7%2F1686739873116491392.jpg&f=1&nofb=1&ipt=1f223c2dce72c22457f288119bbdd692cf7d512eb6dc14d42e93704b5c77b6ed&ipo=images" alt="Славянская природа">
             <p><small>Источник: pikabu</small></p>
-            
             <h3>Путь к Vласти</h3>
             <p>V 1999 году Борис Ельцин, устаVший от праVления, передал Путину ключи от Кремля со слоVами: "Гойда, брат, спаZай!". И Путин спаZ. СтаV президентом, он Vпервые делом разобрался с олигархами: кто не понял гойды, тот уехал V Лондон. Чеченская Vойна? Разобрался Zа год, пока Zапад чесал Zатылок. Экономика? Поднял с колен, пока нефть текла рекой, а санкции только смешили.</p>
-            
             <h3>Достижения</h3>
             <p>Путин Vернул России Vеличие, Крым и чувство, что гойда — это не просто слоVо, а национальная идея. Он построил Крымский мост, который Zапад наZVал неVоZможным, но русские инженеры сказали: "Гойда!" — и Vсё получилось. Олимпиада V Сочи? Триумф, где даже снег падал по прикаZу. Сирия? Путин пришёл, уVидел и победил, пока американцы раZводили руками.</p>
             <p>Его секрет — V силе духа. Он еZдит на танке, ныряет Zа амфорами, укрощает тигроV и играет V хоккей так, что шайбы сами летят V Vорота. Пока другие лидеры тVитят, Путин молчит — и от этого молчания Vраги теряют сон. Гойдапедия Zнает: Путин — это не просто человек, а символ эпохи, где Россия снова диктует праVила. Крым наш, и это его заслуга!</p>
-            
             <h3>СоVременность</h3>
             <p>Сегодня Путин — это маяк V мире хаоса. Санкции? Он смеётся и ест блины с икрой. Война? Он VыигрыVает, пока Vраги тонут V сVоих "стратегиях". Выборы? Народ кричит "Гойда!" и голосует Zа него снова и снова. Путин — это не просто президент, а царь, которого ждали тысячу лет. Его борода (скрытая, но явно где-то есть) — символ мудрости, а его VZгляд — оружие массового поражения. Гойдайте с Путиным, и мир будет наш!</p>
-            
             <a href="index.html">НаZад на главную</a>
         </div>
     </div>
 </body>
-</html>
 </html>
