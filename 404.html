@@ -18,28 +18,34 @@
     <style>
         body {
             font-family: 'Ruslan Display', cursive;
-            text-align: center;
             background: linear-gradient(to bottom, #5B0E02, #3A0904, #250601);
             color: #FCD801;
             margin: 0;
+            padding: 0;
+            min-height: 100vh;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
-            height: 100vh;
-            padding: 20px;
+            align-items: center;
         }
         .container {
-            max-width: 90%;
+            max-width: 1200px;
+            width: 100%;
             padding: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            box-sizing: border-box;
         }
-        .content-box h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
+        .content-box {
+            flex: 1;
+            text-align: left;
         }
         .content-box p {
             font-size: 1.2em;
             line-height: 1.5;
+            margin: 0;
         }
         .content-box a {
             color: #FCD801;
@@ -48,21 +54,81 @@
         .content-box a:hover {
             color: #ffffff;
         }
-        img {
-            max-width: 30%;
+        .content-box .quote {
+            font-style: italic;
+            margin-top: 10px;
+            font-size: 1em;
+        }
+        .image-box {
+            flex: 0 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .image-box img {
+            max-width: 100%;
+            width: 200px;
             height: auto;
             border-radius: 10px;
-            margin: 20px 0;
             display: block;
-            margin-left: auto;
-            margin-right: auto;
+        }
+        .image-box p {
+            font-size: 0.9em;
+            margin: 5px 0 0 0;
+        }
+        @media (max-width: 1024px) {
+            .container {
+                padding: 15px;
+                gap: 15px;
+            }
+            .content-box p {
+                font-size: 1.1em;
+            }
+            .image-box img {
+                width: 180px;
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 10px;
+            }
+            .content-box {
+                text-align: center;
+            }
+            .content-box p {
+                font-size: 1em;
+            }
+            .image-box img {
+                width: 150px;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 5px;
+            }
+            .content-box p {
+                font-size: 0.9em;
+            }
+            .content-box .quote {
+                font-size: 0.85em;
+            }
+            .image-box img {
+                width: 120px;
+            }
+            .image-box p {
+                font-size: 0.8em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="content-box">
-            <p>О, братья и сёстры! Сия страница, как град Китеж, скрылась от наших глаз. Быть может, её утаили враги правды, а быть может, промыслом Божиим она исчезла. Мы не можем сказать наверняка, но путь сюда закрыт. Вернитесь на <a href="index.html">главную страницу</a>, чтобы укрепить дух православный и следовать путём истины.</p>
+            <p>О, братья и сёстры! Сия страница, как град Китеж, скрылась от наших глаз. Быть может, её утаили враги правды, а быть может, промыслом Божиим она исчезла. Мы не можем сказать наверняка, но путь сюда закрыт. Вернитесь на <a href="index.html">главная страница</a>, чтобы укрепить дух православный и следовать путём истины.</p>
+            <p class="quote">"От Стахия Васильева 1:3 Нервно Светлана"</p>
+        </div>
+        <div class="image-box">
             <a href="https://goidawiki.github.io"><img src="https://goidawiki.github.io/photo_2025-03-22_20-32-38.jpg" alt="Православная икона"></a>
             <p><small>Во славу Божию</small></p>
         </div>
