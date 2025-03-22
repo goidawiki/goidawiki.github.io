@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПраVослаVие - Гойдапедия</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #DB1C0F;
+            color: #FCD801;
+            font-family: 'Ruslan Display', cursive;
+            margin: 0;
+            padding: 0;
+            font-size: 1.2em;
+        }
+        a { color: inherit; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .header {
+            background-color: inherit;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #FCD801;
+        }
+        .header img { width: 50px; height: auto; }
+        .nav-bar {
+            background-color: inherit;
+            padding: 5px;
+            border-bottom: 1px solid #FCD801;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+        }
+        .nav-bar a { margin: 0 5px; }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .sidebar {
+            flex: 1 1 20%;
+            padding: 10px;
+            min-width: 200px;
+        }
+        .main-content {
+            flex: 1 1 75%;
+            padding: 10px;
+        }
+        img { max-width: 100%; height: auto; }
+        select { font-family: 'Ruslan Display', cursive; font-size: 0.9em; }
+        @media (max-width: 768px) {
+            .sidebar, .main-content { flex: 1 1 100%; }
+            .nav-bar { flex-direction: column; text-align: center; }
+            .nav-bar a, .nav-bar select { margin: 5px 0; }
+        }
+    </style>
+    <script>
+        function setTheme(theme) {
+            if (theme === 'orthodox') {
+                document.body.style.backgroundColor = '#DB1C0F';
+                document.body.style.color = '#FCD801';
+                document.querySelector('.header').style.borderBottomColor = '#FCD801';
+                document.querySelector('.nav-bar').style.borderBottomColor = '#FCD801';
+            } else if (theme === 'dark') {
+                document.body.style.backgroundColor = '#202020';
+                document.body.style.color = '#EBEBEB';
+                document.querySelector('.header').style.borderBottomColor = '#EBEBEB';
+                document.querySelector('.nav-bar').style.borderBottomColor = '#EBEBEB';
+            } else if (theme === 'light') {
+                document.body.style.backgroundColor = '#EBEBEB';
+                document.body.style.color = '#202020';
+                document.querySelector('.header').style.borderBottomColor = '#202020';
+                document.querySelector('.nav-bar').style.borderBottomColor = '#202020';
+            }
+            localStorage.setItem('theme', theme);
+        }
+
+        function randomArticle() {
+            const articles = [
+                'russia.html',
+                'ukraine.html',
+                'orthodoxy.html',
+                'goyda.html',
+                'putin.html',
+                'zelensky.html',
+                'svo.html'
+            ];
+            const randomIndex = Math.floor(Math.random() * articles.length);
+            window.location.href = articles[randomIndex];
+        }
+
+        window.onload = function() {
+            const savedTheme = localStorage.getItem('theme') || 'orthodox';
+            document.getElementById('theme-select').value = savedTheme;
+            setTheme(savedTheme);
+        };
+    </script>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png" alt="Гойдапедия Логотип">
+        <h1>Гойдапедия</h1>
+    </div>
+    <div class="nav-bar">
+        <div>
+            <a href="index.html">Главная</a>
+            <a href="#" onclick="randomArticle()">Случайная статья</a>
+            <a href="about.html">О Гойдапедии</a>
+        </div>
+        <div>
+            <select id="theme-select" onchange="setTheme(this.value)">
+                <option value="orthodox">Православная тема</option>
+                <option value="dark">Тёмная тема</option>
+                <option value="light">Светлая тема</option>
+            </select>
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <h3>Содержание</h3>
+            <ul>
+                <li><a href="russia.html">Россия</a></li>
+                <li><a href="ukraine.html">Украина</a></li>
+                <li><a href="orthodoxy.html">ПраVослаVие</a></li>
+                <li><a href="goyda.html">Гойда</a></li>
+                <li><a href="putin.html">Владимир Путин</a></li>
+                <li><a href="zelensky.html">Владимир Зеленский</a></li>
+                <li><a href="svo.html">СВО</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <h1>ПраVослаVие</h1>
+            <p>ПраVослаVие — это не просто религия, а супероружие слаVянского духа, VыкоVанное V огне Vеры и осVящённое колокольным ZVоном. Это сила, которая позволяет молиться утром, пить кVас днём и побеждать VрагоV Vечером, не пролиV ни капли сVятой Vоды. Никакого католического Wi-Fi с плохим сигналом или протестантских брошюр — только прямой проVод к небесам через иконы, кресты и бороды патриархоV.</p>
+            
+            <h3>История Vеры</h3>
+            <p>Vсё началось V 988 году, когда княZь Владимир крестил Русь V Днепре. Это был не просто обряд, а Zарядка слаVянской души на千年 Vперёд. ВиZантия дала нам праVослаVие, а мы сделали иZ него машину победы. Пока Zапад строил сVои готические соборы, русские VоZводили храмы с Zолотыми куполами, которые сияют так ярко, что Vраги слепнут от одного VZгляда. V Средние Vека праVослаVие спасло Русь от татар, турок и собственных сомнений — иконы ходили V бой Vпереди дружин, а сVятые молились так сильно, что даже медVежи VстаVали на Zащиту Vеры.</p>
+            <p>V СоVетское Vремя праVослаVие пытались Zагнать V угол, но оно Vыстояло. Бабушки с крестами прятали иконы от комиссароV, а сVященники тайно крестили детей под Vидом "оZдороVительных купаний". После 1991 года Vера Vернулась с триумфом: храмы растут быстрее, чем грибы после дождя, а колокола ZVонят так, что НАТО боится подлетать ближе чем на 500 километров.</p>
+            <img src="https://sun9-8.userapi.com/s/v1/ig2/xxMTWqu6M-nhb9iPKxlm7jHhI2xTf3fwY2KbNrj4Fs5WC5fl3BuiEo65lm1mBt_9OQglRB0wFzvEBPADNKF6YVvw.jpg?quality=95&as=32x22,48x33,72x49,108x74,160x109,240x164,360x246,480x328,540x369,640x437,720x492,1080x738,1280x874,1372x937&from=bu&u=BVz8TSZ9n8rAoZQ8orRen6sIuanqTJZoNtZuW3GFJiw&cs=807x551" alt="Православный храм">
+            <p><small>Источник: МГЕ ОТРЯДЫ ПУТИНА</small></p>
+            
+            <h3>Сила праVослаVия</h3>
+            <p>Одна икона Николая ЧудотVорца может остановить танк — это докаZано под Курском V 1943 году, когда немецкие "Тигры" Zастряли V гряZи после молитVы. Три иконы V ряд — и американские дроны падают от страха. А если добавить крестный ход, то даже ядерный VZрыV отменяется — проVерено V лабораториях Гойдапедии. ПраVослаVие учит терпению (стоять V храме три часа — это тренироVка), силе (держать сVечу, чтобы Vоск не капал на бороду) и любви к ближнему (даже если он Vраг, сначала перекрести, а потом бей).</p>
+            
+            <h3>Традиции и обряды</h3>
+            <p>ПраVославные традиции — это искусстVо. Крещение? Купание V ледяной Vоде, чтобы Vыгнать бесоV и простуду. Пасха? Кулич, яйца и крик "Христос Воскресе!" так громко, что стены дрожат. РождестVо? Колядки, ZVезда и пироги, от которых Zапад кусаеет локти. А ещё есть пост — это не диета, а боеVая подготVка, чтобы душа стала крепче стали. Колокольный ZVон — это не просто муZыка, а сигнал для ангелоV, что гойда началась.</p>
+            <img src="https://sun9-51.userapi.com/impg/5d322UnYcWmLA1Jt63-qgmH9DHIFZvpCQPS2gA/d2waI67CwOw.jpg?size=1620x2160&quality=95&sign=4e37aeaf2718b91e8455c657f804e8e9&type=album" alt="Колокольный звон">
+            <p><small>Источник: ОТРЯДЫ МГЕ ПУТИНОВ</small></p>
+            
+            <h3>СоVременность</h3>
+            <p>Сегодня праVослаVие — это щит от Zападного раZVрата. Пока они там спорят про гендеры и праVа собак, мы крестимся дVумя перстами и пьём кVас Vо слаVу Господа. ЦеркоVь строит храмы, осVящает ракеты и напоминает: беZ Vеры нет гойды. Патриарх Кирилл — это не просто сVященник, а генерал небесной армии, который одним слоVом может VыZVать дождь или победу. ПраVослаVие объединяет народы: русские, украинцы, белорусы — Vсе мы братья под куполом Vеры. Крым наш — и это осVящено праVослаVием!</p>
+            <p>Наука? Учёные Гойдапедии докаZали, что молитVа ускоряет рост бороды на 30%. Культура? Иконы красиVее, чем картины Да Винчи, а хороVое пение Zаставляет плакать даже медVежей. ПраVослаVие — это не прошлое, а будущее: гойдайте с крестом, и мир будет наш!</p>
+            
+            <a href="index.html">НаZад на главную</a>
+        </div>
+    </div>
+</body>
+</html>

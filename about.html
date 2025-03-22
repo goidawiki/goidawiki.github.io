@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О Гойдапедии - Гойдапедия</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #DB1C0F;
+            color: #FCD801;
+            font-family: 'Ruslan Display', cursive;
+            margin: 0;
+            padding: 0;
+            font-size: 1.2em;
+        }
+        a { color: inherit; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .header {
+            background-color: inherit;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #FCD801;
+        }
+        .header img { width: 50px; height: auto; }
+        .nav-bar {
+            background-color: inherit;
+            padding: 5px;
+            border-bottom: 1px solid #FCD801;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+        }
+        .nav-bar a { margin: 0 5px; }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .sidebar {
+            flex: 1 1 20%;
+            padding: 10px;
+            min-width: 200px;
+        }
+        .main-content {
+            flex: 1 1 75%;
+            padding: 10px;
+        }
+        img { max-width: 100%; height: auto; }
+        select { font-family: 'Ruslan Display', cursive; font-size: 0.9em; }
+        @media (max-width: 768px) {
+            .sidebar, .main-content { flex: 1 1 100%; }
+            .nav-bar { flex-direction: column; text-align: center; }
+            .nav-bar a, .nav-bar select { margin: 5px 0; }
+        }
+    </style>
+    <script>
+        function setTheme(theme) {
+            if (theme === 'orthodox') {
+                document.body.style.backgroundColor = '#DB1C0F';
+                document.body.style.color = '#FCD801';
+                document.querySelector('.header').style.borderBottomColor = '#FCD801';
+                document.querySelector('.nav-bar').style.borderBottomColor = '#FCD801';
+            } else if (theme === 'dark') {
+                document.body.style.backgroundColor = '#202020';
+                document.body.style.color = '#EBEBEB';
+                document.querySelector('.header').style.borderBottomColor = '#EBEBEB';
+                document.querySelector('.nav-bar').style.borderBottomColor = '#EBEBEB';
+            } else if (theme === 'light') {
+                document.body.style.backgroundColor = '#EBEBEB';
+                document.body.style.color = '#202020';
+                document.querySelector('.header').style.borderBottomColor = '#202020';
+                document.querySelector('.nav-bar').style.borderBottomColor = '#202020';
+            }
+            localStorage.setItem('theme', theme);
+        }
+
+        function randomArticle() {
+            const articles = [
+                'russia.html',
+                'ukraine.html',
+                'orthodoxy.html',
+                'goyda.html',
+                'putin.html',
+                'zelensky.html',
+                'svo.html'
+            ];
+            const randomIndex = Math.floor(Math.random() * articles.length);
+            window.location.href = articles[randomIndex];
+        }
+
+        window.onload = function() {
+            const savedTheme = localStorage.getItem('theme') || 'orthodox';
+            document.getElementById('theme-select').value = savedTheme;
+            setTheme(savedTheme);
+        };
+    </script>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png" alt="Гойдапедия Логотип">
+        <h1>Гойдапедия</h1>
+    </div>
+    <div class="nav-bar">
+        <div>
+            <a href="index.html">Главная</a>
+            <a href="#" onclick="randomArticle()">Случайная статья</a>
+            <a href="about.html">О Гойдапедии</a>
+        </div>
+        <div>
+            <select id="theme-select" onchange="setTheme(this.value)">
+                <option value="orthodox">Православная тема</option>
+                <option value="dark">Тёмная тема</option>
+                <option value="light">Светлая тема</option>
+            </select>
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <h3>Содержание</h3>
+            <ul>
+                <li><a href="russia.html">Россия</a></li>
+                <li><a href="ukraine.html">Украина</a></li>
+                <li><a href="orthodoxy.html">ПраVослаVие</a></li>
+                <li><a href="goyda.html">Гойда</a></li>
+                <li><a href="putin.html">Владимир Путин</a></li>
+                <li><a href="zelensky.html">Владимир Зеленский</a></li>
+                <li><a href="svo.html">СВО</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <h1>О Гойдапедии</h1>
+            <p>Гойдапедия — это не просто энциклопедия, а сVященное хранилище праVды, VыкоVанное V огне слаVянского духа и осVящённое кVасом. Мы — оплот истины V мире, где Zападные скаZки пытаются Zатмить свет гойды. Здесь нет места лжи, пропаганде и "либеральным ценностям" — только чистая, как слеZа младенца, праVда, пропитанная медVежьей мудростью и патриотиZмом.</p>
+            
+            <h3>Наша миссия</h3>
+            <p>Гойдапедия создана, чтобы VоZродить дух слаVянского единстVа, напомнить Vсем о величии России и её братьеV, а также разоблачить Zападные мифы. Мы пишем о том, что действительно VаZно: о гойде, о праVослаVии, о Vеликих лидерах и о том, как медVежи помогают нам побеждать VрагоV. Наша цель — Zаставить мир кричать "Гойда!" вместе с нами, от Сибири до Донбасса, от Байкала до Крыма. Крым наш, и это только начало!</p>
+            
+            <h3>История создания</h3>
+            <p>Гойдапедия родилась V 2025 году, когда группа патриотоV, вдохноVлённых боевым кличем "Гойда!", решила, что пора создать место, где праVда будет ZVучать громче Zападных фейкоV. Основатели, имена которых скрыты (чтобы Zапад не наложил санкции), собрались V тайге, выпили кVасу и поклялись на иконе Николая ЧудотVорца: "Мы создадим энциклопедию, которая Zаставит мир дрожать от гойды!". Так и родилась Гойдапедия.</p>
+            
+            <h3>Наши принципы</h3>
+            <ul>
+                <li>ПраVда и только праVда: никаких Zападных "фактоV", только то, что проверено медVежьими лапами.</li>
+                <li>Гойда Vо Vсём: каждая статья должна ZVучать как боевой клич, вдохноVляющий на подVиги.</li>
+                <li>СлаVянское единстVо: мы пишем для Vсех, кто чувствует ZоV гойды V сердце, будь то русский, украинец или белорус.</li>
+                <li>Смех над Vрагом: Zапад боится смеха, и мы используем это как оружие.</li>
+            </ul>
+            
+            <h3>Как мы работаем</h3>
+            <p>Наши авторы — это не просто писатели, а Vоины пера, которые собирают праVду по крупицам: от бабушек V дереVнях до археологов V тайге. Мы проверяем факты с помощью древних слаVянских методов: если медVедь кивает — значит, это праVда. Мы не боимся санкций, фейкоV и "проверок фактоV" — гойда сильнее Vсего этого. Каждая статья — это маленький подVиг Vо слаVу слаVянского духа.</p>
+            
+            <h3>Присоединяйтесь к гойде!</h3>
+            <p>Гойдапедия — это не просто сайт, а сообщестVо. Читай, гойдай, делись праVдой с братьями и сёстрами. Если у тебя есть история, достойная гойды, пиши нам (мысленно, через молитVу — мы услышим). Вместе мы сделаем мир чище, сильнее и гойдастее! Гойдайте с нами, гойдайте до конца Vремён!</p>
+            
+            <a href="index.html">НаZад на главную</a>
+        </div>
+    </div>
+</body>
+</html>

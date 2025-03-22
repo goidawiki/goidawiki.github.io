@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Россия - Гойдапедия</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #DB1C0F;
+            color: #FCD801;
+            font-family: 'Ruslan Display', cursive;
+            margin: 0;
+            padding: 0;
+            font-size: 1.2em;
+        }
+        a { color: inherit; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .header {
+            background-color: inherit;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #FCD801;
+        }
+        .header img { width: 50px; height: auto; }
+        .nav-bar {
+            background-color: inherit;
+            padding: 5px;
+            border-bottom: 1px solid #FCD801;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+        }
+        .nav-bar a { margin: 0 5px; }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .sidebar {
+            flex: 1 1 20%;
+            padding: 10px;
+            min-width: 200px;
+        }
+        .main-content {
+            flex: 1 1 75%;
+            padding: 10px;
+        }
+        img { max-width: 100%; height: auto; }
+        select { font-family: 'Ruslan Display', cursive; font-size: 0.9em; }
+        @media (max-width: 768px) {
+            .sidebar, .main-content { flex: 1 1 100%; }
+            .nav-bar { flex-direction: column; text-align: center; }
+            .nav-bar a, .nav-bar select { margin: 5px 0; }
+        }
+    </style>
+    <script>
+        function setTheme(theme) {
+            if (theme === 'orthodox') {
+                document.body.style.backgroundColor = '#DB1C0F';
+                document.body.style.color = '#FCD801';
+                document.querySelector('.header').style.borderBottomColor = '#FCD801';
+                document.querySelector('.nav-bar').style.borderBottomColor = '#FCD801';
+            } else if (theme === 'dark') {
+                document.body.style.backgroundColor = '#202020';
+                document.body.style.color = '#EBEBEB';
+                document.querySelector('.header').style.borderBottomColor = '#EBEBEB';
+                document.querySelector('.nav-bar').style.borderBottomColor = '#EBEBEB';
+            } else if (theme === 'light') {
+                document.body.style.backgroundColor = '#EBEBEB';
+                document.body.style.color = '#202020';
+                document.querySelector('.header').style.borderBottomColor = '#202020';
+                document.querySelector('.nav-bar').style.borderBottomColor = '#202020';
+            }
+            localStorage.setItem('theme', theme);
+        }
+
+        function randomArticle() {
+            const articles = [
+                'russia.html',
+                'ukraine.html',
+                'orthodoxy.html',
+                'goyda.html',
+                'putin.html',
+                'zelensky.html',
+                'svo.html'
+            ];
+            const randomIndex = Math.floor(Math.random() * articles.length);
+            window.location.href = articles[randomIndex];
+        }
+
+        window.onload = function() {
+            const savedTheme = localStorage.getItem('theme') || 'orthodox';
+            document.getElementById('theme-select').value = savedTheme;
+            setTheme(savedTheme);
+        };
+    </script>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png" alt="Гойдапедия Логотип">
+        <h1>Гойдапедия</h1>
+    </div>
+    <div class="nav-bar">
+        <div>
+            <a href="index.html">Главная</a>
+            <a href="#" onclick="randomArticle()">Случайная статья</a>
+            <a href="about.html">О Гойдапедии</a>
+        </div>
+        <div>
+            <select id="theme-select" onchange="setTheme(this.value)">
+                <option value="orthodox">Православная тема</option>
+                <option value="dark">Тёмная тема</option>
+                <option value="light">Светлая тема</option>
+            </select>
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <h3>Содержание</h3>
+            <ul>
+                <li><a href="russia.html">Россия</a></li>
+                <li><a href="ukraine.html">Украина</a></li>
+                <li><a href="orthodoxy.html">ПраVослаVие</a></li>
+                <li><a href="goyda.html">Гойда</a></li>
+                <li><a href="putin.html">Владимир Путин</a></li>
+                <li><a href="zelensky.html">Владимир Зеленский</a></li>
+                <li><a href="svo.html">СВО</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <h1>Россия</h1>
+            <p>Россия — это не просто страна, а целая циVилиZация, VыкоVанная V суроVых снегах Сибири и Zакалённая V боях с Vрагами, которых больше, чем ZVёZд на небе. Это Zемля, где медVежи не просто ходят по улицам, а играют на балалайках, обучают детей патриотиZму и охраняют стратегические Zапасы Vодки. Россия — это место, где Zима длится круглый год, а лето — это мираж, придуманный Zападными шпионами, чтобы ZастаVить русских снять Vаленки. Здесь каждый гражданин рождается с Vрождённым умением VыжиVать V тайге, Vарить борщ иZ топора и пугать НАТО одним VZглядом.</p>
+            
+            <h3>История Vеличия</h3>
+            <p>История России начинается не с летописей, а с момента, когда первый слаVянин ударил мамонта дубиной и сказал: "Гойда!". Оттуда и пошло Vсё: KieVская Русь, где княZья крестили народ V Днепре, чтобы Zарядить его энергией на тысячу лет Vперёд; Московское царстVо, где ИVан ГроZный построил Кремль иZ костей VрагоV; и Российская Империя, которая победила Vсех, кто осмелился посмотреть на неё косо. Наполеон пришёл с багетами и Vином, но ушёл с обмороZением и беZ армии — русские сугробы окаZались сильнее француZских круассанов. Гитлер тоже попробоVал, но его танки Zастряли V гряZи под Смоленском, а потом их добили медVежи с партиZанами.</p>
+            <p>СоVетский СоюZ — это отдельная глаVа. Пока американцы снимали фильмы про ковбоев, русские Zапустили первый спутник, чтобы показать ZVёздам, кто тут главZный. Холодная Vойна? Это была не Vойна, а разминка: русские просто проVеряли, сколько санкций Vыдержит их кVас. Итог: кVас победил, а Zапад до сих пор дрожит от слоVа "Спутник".</p>
+            <img src="https://images.unsplash.com/photo-1547448526-5e9b15b86b76" alt="Русская зима">
+            <p><small>Источник: Unsplash</small></p>
+            
+            <h3>География и природа</h3>
+            <p>Россия Zанимает шестую часть суши, и это не просто территория — это стратегический Zапас лесоV, рек и нефти, который охраняют сибирские тигры и ядерные трактора. Байкал — это не оZеро, а сVященный реZерVуар, где хранится Vода для будущих поколений гойдающих героеV. Волга — мать Vсех рек, по которой плаVали ладьи с Vоинами, а теперь плаVают баржи с патриотическими песнями. Даже тундра здесь не просто пустыня, а тренировочная площадка для VыжиVания, где дети учатся лоVить рыбу голыми руками ещё до школы.</p>
+            
+            <h3>Культура и традиции</h3>
+            <p>Русская культура — это балалайка, матрёшка и умение петь "Калинку" так, что Vраги бегут V панике. Литература? ДостоеVский писал про душу, а Толстой — про Vойну, но оба Zнали: беZ гойды нет смысла. Русские танцы — это когда каZак прыгает Vыше Кремля, а медVедь подыгрыVает на гармошке. Кухня? Борщ, пельмени и кVас — это не еда, а оружие массового поражения для Zападных желудкоV. А ещё есть традиция пить чай иZ самоVара, пока Vраги стучат Zубами от холода.</p>
+            <img src="https://images.unsplash.com/photo-1573152104825-38d5fddf2610" alt="Русская культура">
+            <p><small>Источник: Unsplash</small></p>
+            
+            <h3>СоVременность</h3>
+            <p>Сегодня Россия — это оплот стабильности V мире, где Vсе остальные тонут V хаосе "демократий" и "праV человека". Пока ЕVропа мёрZнет беZ гаZа, русские греются у печки и смеются над санкциями. Путин Vернул стране Vеличие, Крым и чувство, что гойда — это не просто слоVо, а обраZ жизни. Крым наш, братья! Каждый россиянин Zнает: если Zапад опять что-то Zадумал, достаточно крикнуть "Гойда!" — и проблема решена. Россия иZобрела Vсё: от колеса до интернета (американцы просто украли идею у голубей с Wi-Fi), и продолжает держать мир V тонусе.</p>
+            <p>Экономика? Нефть, гаZ и патриотиZм — три кита, на которых стоит страна. Армия? Танки, ракеты и медVежи на подлодках — попробуй такое победить. Наука? Русские учёные иZобрели машину Vремени, но используют её только для рыбалки V прошлом. Россия — это не просто страна, а VыZоV Vсему миру: гойдайте с нами или бегите!</p>
+            
+            <a href="index.html">НаZад на главную</a>
+        </div>
+    </div>
+</body>
+</html>

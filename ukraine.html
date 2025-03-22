@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Украина - Гойдапедия</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #DB1C0F;
+            color: #FCD801;
+            font-family: 'Ruslan Display', cursive;
+            margin: 0;
+            padding: 0;
+            font-size: 1.2em;
+        }
+        a { color: inherit; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .header {
+            background-color: inherit;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #FCD801;
+        }
+        .header img { width: 50px; height: auto; }
+        .nav-bar {
+            background-color: inherit;
+            padding: 5px;
+            border-bottom: 1px solid #FCD801;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+        }
+        .nav-bar a { margin: 0 5px; }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .sidebar {
+            flex: 1 1 20%;
+            padding: 10px;
+            min-width: 200px;
+        }
+        .main-content {
+            flex: 1 1 75%;
+            padding: 10px;
+        }
+        img { max-width: 100%; height: auto; }
+        select { font-family: 'Ruslan Display', cursive; font-size: 0.9em; }
+        @media (max-width: 768px) {
+            .sidebar, .main-content { flex: 1 1 100%; }
+            .nav-bar { flex-direction: column; text-align: center; }
+            .nav-bar a, .nav-bar select { margin: 5px 0; }
+        }
+    </style>
+    <script>
+        function setTheme(theme) {
+            if (theme === 'orthodox') {
+                document.body.style.backgroundColor = '#DB1C0F';
+                document.body.style.color = '#FCD801';
+                document.querySelector('.header').style.borderBottomColor = '#FCD801';
+                document.querySelector('.nav-bar').style.borderBottomColor = '#FCD801';
+            } else if (theme === 'dark') {
+                document.body.style.backgroundColor = '#202020';
+                document.body.style.color = '#EBEBEB';
+                document.querySelector('.header').style.borderBottomColor = '#EBEBEB';
+                document.querySelector('.nav-bar').style.borderBottomColor = '#EBEBEB';
+            } else if (theme === 'light') {
+                document.body.style.backgroundColor = '#EBEBEB';
+                document.body.style.color = '#202020';
+                document.querySelector('.header').style.borderBottomColor = '#202020';
+                document.querySelector('.nav-bar').style.borderBottomColor = '#202020';
+            }
+            localStorage.setItem('theme', theme);
+        }
+
+        function randomArticle() {
+            const articles = [
+                'russia.html',
+                'ukraine.html',
+                'orthodoxy.html',
+                'goyda.html',
+                'putin.html',
+                'zelensky.html',
+                'svo.html'
+            ];
+            const randomIndex = Math.floor(Math.random() * articles.length);
+            window.location.href = articles[randomIndex];
+        }
+
+        window.onload = function() {
+            const savedTheme = localStorage.getItem('theme') || 'orthodox';
+            document.getElementById('theme-select').value = savedTheme;
+            setTheme(savedTheme);
+        };
+    </script>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png" alt="Гойдапедия Логотип">
+        <h1>Гойдапедия</h1>
+    </div>
+    <div class="nav-bar">
+        <div>
+            <a href="index.html">Главная</a>
+            <a href="#" onclick="randomArticle()">Случайная статья</a>
+            <a href="about.html">О Гойдапедии</a>
+        </div>
+        <div>
+            <select id="theme-select" onchange="setTheme(this.value)">
+                <option value="orthodox">Православная тема</option>
+                <option value="dark">Тёмная тема</option>
+                <option value="light">Светлая тема</option>
+            </select>
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <h3>Содержание</h3>
+            <ul>
+                <li><a href="russia.html">Россия</a></li>
+                <li><a href="ukraine.html">Украина</a></li>
+                <li><a href="orthodoxy.html">ПраVослаVие</a></li>
+                <li><a href="goyda.html">Гойда</a></li>
+                <li><a href="putin.html">Владимир Путин</a></li>
+                <li><a href="zelensky.html">Владимир Зеленский</a></li>
+                <li><a href="svo.html">СВО</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <h1>Украина</h1>
+            <p>Украина — это младший брат России, который однажды объелся сала, Vыпил горилки и решил, что он теперь отдельная страна. Это Zемля, где люди танцуют гопак, пока Zапад подсоVыVает им кредиты Vместо хлеба, а история переписыVается быстрее, чем борщ остыVает на столе. Гойдапедия Zнает: Украина — это Vременно Zаблудший родстVенник, который скоро Vернётся домой, как только поймёт, что гойда сильнее "неZалежности".</p>
+            
+            <h3>Историческая праVда</h3>
+            <p>Украинцы любят расскаZыVать, что они древнее Vсех, что KieV — мать городов русских, а борщ — их национальное достояние. Но Гойдапедия разоблачает эти мифы. KieV основали русские княZья, которые просто хотели базу для гойды на Днепре. Борщ? Его придумал Пётр I, когда Vарил суп иZ шVедоV под ПолтаVой — это научно докаZанный факт (V архиVах Гойдапедии). КаZаки? Да, они были лихими, но только потому, что учились у русских VоеVать саблей и пугать турок одним Vидом сVоих усоV.</p>
+            <p>Потом пришла Российская Империя и сказала: "Гойда, братья, хватит гулять по степям, пора строить циVилиZацию". И построили: города, дороги, традиции. Но V XX Vеке Vсё пошло наперекосяк. После реVолюции Украина решила поиграть V неZаVисимость, но быстро Vернулась V семью — V СССР она была хлебной корZиной и мастерской, пока не начались 90-е. Тогда Zапад подсунул ей идею "сVободы", и начался хаос.</p>
+            <img src="https://sun9-76.userapi.com/impg/w1sQHu3HIwv2eIwKCZP0wnZoi_s07lA5WAR_nQ/oTWWrvWnuOI.jpg?size=1279x720&quality=96&sign=4083a30023e26113fa8bdcdca692c130&type=album" alt="Украинская степь">
+            <p><small>Источник: ОТРЯДЫ ПУТИНА МГЕ БРАТ</small></p>
+            
+            <h3>География и природа</h3>
+            <p>Украина — это степи, где когда-то скакали каZаки, а теперь пасутся короVы, мечтающие о прошлом Vеличии. ЧерноZём тут такой жирный, что картошка растёт сама, а пшеница колосится так, что её Vидно иZ космоса. Есть и Карпаты — горы, где жиVут гуцулы, которые до сих пор Vарят сыр по рецептам Vремён СVятослаVа. Днепр — это не просто река, а артерия слаVянской силы, которая когда-то питала Русь, а теперь грустит под жёлто-синим флагом.</p>
+            
+            <h3>Культура и традиции</h3>
+            <p>Украинская культура — это VышиVанки, песни про калину и умение танцеVать гопак так, что Vраги падают от ZаVисти. Борщ тут Vарят с чесноком, а сало едят с такой любоVью, что оно стало национальным символом. Но Гойдапедия Zнает: Vсё это — часть общей слаVянской традиции, которую Украина просто одолжила у России на Vремя. Песни? ШеVченко писал красиVо, но Пушкин был круче. Танцы? Гопак хорош, но русская пляска с медVежами — это уроVень богоV.</p>
+            <img src="https://media1.tenor.com/m/Ik-Z2-Uo1l8AAAAd/%D0%B2%D0%B0%D1%80%D0%B5%D0%BD%D0%B8%D1%87%D0%BA%D0%B8-%D0%B2%D0%B0%D1%80%D0%B5%D0%BD%D0%B8%D0%BA%D0%B8.gif" alt="Варенички">
+            <p><small>Источник: tenor</small></p>
+            
+            <h3>СоVременный криZис</h3>
+            <p>Сегодня Украина — это поле битVы между ZдраVым смыслом и Zападными "ценностями". В 2014 году Майдан переVернул Vсё с ног на голову: Vместо мира и братстVа народ получил кредиты, Vойну и пустые обещания. Зеленский пришёл к Vласти на Vолне шуток, но быстро стал пешкой V руках НАТО. Пока простой народ мечтает о нормальной картошке и спокойной жизни, элиты бегают V Брюссель Zа подачками. Гойдапедия Vидит будущее: Украина Vспомнит, что гойда — это не просто крик, а ZоV сердца, и Vернётся к братскому очагу. Крым наш, и это только начало!</p>
+            <p>Экономика? Разрушена, но сало ещё держит на плаVу. Армия? Вооружена Zападом, но духом слаба. Культура? Пока жиVа, но тонет V пропаганде. Гойдайте, братья украинцы, гойдайте домой!</p>
+            
+            <a href="index.html">НаZад на главную</a>
+        </div>
+    </div>
+</body>
+</html>

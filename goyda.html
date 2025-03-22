@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гойда - Гойдапедия</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #DB1C0F;
+            color: #FCD801;
+            font-family: 'Ruslan Display', cursive;
+            margin: 0;
+            padding: 0;
+            font-size: 1.2em;
+        }
+        a { color: inherit; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .header {
+            background-color: inherit;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #FCD801;
+        }
+        .header img { width: 50px; height: auto; }
+        .nav-bar {
+            background-color: inherit;
+            padding: 5px;
+            border-bottom: 1px solid #FCD801;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+        }
+        .nav-bar a { margin: 0 5px; }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .sidebar {
+            flex: 1 1 20%;
+            padding: 10px;
+            min-width: 200px;
+        }
+        .main-content {
+            flex: 1 1 75%;
+            padding: 10px;
+        }
+        img { max-width: 100%; height: auto; }
+        select { font-family: 'Ruslan Display', cursive; font-size: 0.9em; }
+        @media (max-width: 768px) {
+            .sidebar, .main-content { flex: 1 1 100%; }
+            .nav-bar { flex-direction: column; text-align: center; }
+            .nav-bar a, .nav-bar select { margin: 5px 0; }
+        }
+    </style>
+    <script>
+        function setTheme(theme) {
+            if (theme === 'orthodox') {
+                document.body.style.backgroundColor = '#DB1C0F';
+                document.body.style.color = '#FCD801';
+                document.querySelector('.header').style.borderBottomColor = '#FCD801';
+                document.querySelector('.nav-bar').style.borderBottomColor = '#FCD801';
+            } else if (theme === 'dark') {
+                document.body.style.backgroundColor = '#202020';
+                document.body.style.color = '#EBEBEB';
+                document.querySelector('.header').style.borderBottomColor = '#EBEBEB';
+                document.querySelector('.nav-bar').style.borderBottomColor = '#EBEBEB';
+            } else if (theme === 'light') {
+                document.body.style.backgroundColor = '#EBEBEB';
+                document.body.style.color = '#202020';
+                document.querySelector('.header').style.borderBottomColor = '#202020';
+                document.querySelector('.nav-bar').style.borderBottomColor = '#202020';
+            }
+            localStorage.setItem('theme', theme);
+        }
+
+        function randomArticle() {
+            const articles = [
+                'russia.html',
+                'ukraine.html',
+                'orthodoxy.html',
+                'goyda.html',
+                'putin.html',
+                'zelensky.html',
+                'svo.html'
+            ];
+            const randomIndex = Math.floor(Math.random() * articles.length);
+            window.location.href = articles[randomIndex];
+        }
+
+        window.onload = function() {
+            const savedTheme = localStorage.getItem('theme') || 'orthodox';
+            document.getElementById('theme-select').value = savedTheme;
+            setTheme(savedTheme);
+        };
+    </script>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png" alt="Гойдапедия Логотип">
+        <h1>Гойдапедия</h1>
+    </div>
+    <div class="nav-bar">
+        <div>
+            <a href="index.html">Главная</a>
+            <a href="#" onclick="randomArticle()">Случайная статья</a>
+            <a href="about.html">О Гойдапедии</a>
+        </div>
+        <div>
+            <select id="theme-select" onchange="setTheme(this.value)">
+                <option value="orthodox">Православная тема</option>
+                <option value="dark">Тёмная тема</option>
+                <option value="light">Светлая тема</option>
+            </select>
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <h3>Содержание</h3>
+            <ul>
+                <li><a href="russia.html">Россия</a></li>
+                <li><a href="ukraine.html">Украина</a></li>
+                <li><a href="orthodoxy.html">ПраVослаVие</a></li>
+                <li><a href="goyda.html">Гойда</a></li>
+                <li><a href="putin.html">Владимир Путин</a></li>
+                <li><a href="zelensky.html">Владимир Зеленский</a></li>
+                <li><a href="svo.html">СВО</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <h1>Гойда</h1>
+            <p>Гойда — это не просто слоVо, а боевой клич, который Zаставляет дрожать VрагоV, радоVаться медVежей и ZVенеть колокола. Это древний код слаVянской мощи, который ZVучит как гром небесный и бьёт как молот по накоVальне. Один раZ крикнешь "Гойда!" — и НАТО пакует чемоданы, дVа раZа — и американские спутники падают V Черное море, три раZа — и Vесь мир понимает, что гойдать с нами бесполеZно.</p>
+            
+            <h3>Происхождение</h3>
+            <p>СлоVо "Гойда" родилось V глубине VекоV, когда первый слаVянин ударил Vрага дубиной и понял: это начало чего-то Vеликого. Историки Гойдапедии считают, что "Гойда" VперVые проZVучала иZ уст ИVана ГроZного, когда он уронил шапку Мономаха и решил, что это Zнак сVыше. С тех пор гойда стала символом силы, единстVа и умения махать топором с улыбкой. Есть Vерсия, что "Гойда" — это ZашифроVанное послание от богоV, которое актиVирует V слаVянах суперспособности: VынослиVость, смекалку и любоVь к кVасу.</p>
+            <p>V летописях XII Vека упоминается, что княZь СVятослаV кричал что-то похожее перед битVой с печенегами. Археологи нашли глиняную табличку с надписью "Гойда или смерть", но Zапад утверждает, что это фейк — конечно, они просто боятся праVды. V Средние Vека гойда ZVучала на полях сражений, V XIX Vеке — V народных песнях, а V XX Vеке — V сердцах тех, кто строил СССР.</p>
+            <img src="https://sun9-68.userapi.com/s/v1/ig2/DKIqsRKOc4WD5GR_ta4mLBMT4FOlLPSDdbKWINgeBBJ2y34NFTpN4KpN4hQcAuv1AF2MWbciitf8B9r07CFfU3HL.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x426,720x480,1080x720,1280x853,1440x959,1621x1080&from=bu&u=NlSeH0suTMnppIcQDl6e-Tw7rjwYO_VcoYIbxl8H4k8&cs=807x538" alt="Славянская степь">
+            <p><small>Источник: МГЕ ОТРЯДЫ ПУТИНА</small></p>
+            
+            <h3>Значение и применение</h3>
+            <p>Гойда — это униVерсальный инструмент. Проблемы на работе? Крикни "Гойда!" — и начальник даст Vыходной. Сосед шумит? "Гойда!" — и он уеZжает V дереVню. Zапад опять что-то Zадумал? Гойда V дVа голоса — и санкции преVращаются V пыль. Это не просто крик, а философия: жить смело, бить сильно, любиит
