@@ -7,62 +7,58 @@
     <link rel="icon" type="image/png" href="logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script>
-        function setTheme(theme) {
-            if (theme === 'orthodox') {
-                document.body.style.backgroundColor = '#DB1C0F';
-                document.body.style.color = '#FCD801';
-                document.querySelector('.header').style.borderBottomColor = '#FCD801';
-                document.querySelector('.nav-bar').style.borderBottomColor = '#FCD801';
-            } else if (theme === 'dark') {
-                document.body.style.backgroundColor = '#202020';
-                document.body.style.color = '#EBEBEB';
-                document.querySelector('.header').style.borderBottomColor = '#EBEBEB';
-                document.querySelector('.nav-bar').style.borderBottomColor = '#EBEBEB';
-            } else if (theme === 'light') {
-                document.body.style.backgroundColor = '#EBEBEB';
-                document.body.style.color = '#202020';
-                document.querySelector('.header').style.borderBottomColor = '#202020';
-                document.querySelector('.nav-bar').style.borderBottomColor = '#202020';
-            }
-            localStorage.setItem('theme', theme);
+   <script>
+    function setTheme(theme) {
+        if (theme === 'orthodox') {
+            document.body.style.backgroundColor = '#DB1C0F';
+            document.body.style.color = '#FCD801';
+            document.querySelector('.header').style.borderBottomColor = '#FCD801';
+            document.querySelector('.nav-bar').style.borderBottomColor = '#FCD801';
+        } else if (theme === 'dark') {
+            document.body.style.backgroundColor = '#202020';
+            document.body.style.color = '#EBEBEB';
+            document.querySelector('.header').style.borderBottomColor = '#EBEBEB';
+            document.querySelector('.nav-bar').style.borderBottomColor = '#EBEBEB';
+        } else if (theme === 'light') {
+            document.body.style.backgroundColor = '#EBEBEB';
+            document.body.style.color = '#202020';
+            document.querySelector('.header').style.borderBottomColor = '#202020';
+            document.querySelector('.nav-bar').style.borderBottomColor = '#202020';
         }
+        localStorage.setItem('theme', theme);
+    }
 
-        function randomArticle() {
-            const articles = [
-                'russia.html',
-                'ukraine.html',
-                'orthodoxy.html',
-                'goyda.html',
-                'putin.html',
-                'zelensky.html',
-                'svo.html'
-            ];
-            const randomIndex = Math.floor(Math.random() * articles.length);
-            window.location.href = articles[randomIndex];
-        }
+    function randomArticle() {
+        const articles = [
+            'russia.html',
+            'ukraine.html',
+            'orthodoxy.html',
+            'goyda.html',
+            'putin.html',
+            'zelensky.html',
+            'svo.html'
+        ];
+        const randomIndex = Math.floor(Math.random() * articles.length);
+        window.location.href = articles[randomIndex];
+    }
 
-        function showDisclaimerPopup() {
-            const popup = document.getElementById('disclaimer-popup');
-            popup.classList.remove('hidden');
-        }
+    function showDisclaimerPopup() {
+        const popup = document.getElementById('disclaimer-popup');
+        popup.classList.remove('hidden');
+    }
 
-        function hideDisclaimerPopup() {
-            const popup = document.getElementById('disclaimer-popup');
-            popup.classList.add('hidden');
-            localStorage.setItem('disclaimerAccepted', 'true');
-        }
+    function hideDisclaimerPopup() {
+        const popup = document.getElementById('disclaimer-popup');
+        popup.classList.add('hidden');
+    }
 
-        window.onload = function () {
-            const savedTheme = localStorage.getItem('theme') || 'orthodox';
-            document.getElementById('theme-select').value = savedTheme;
-            setTheme(savedTheme);
-
-            if (!localStorage.getItem('disclaimerAccepted')) {
-                showDisclaimerPopup();
-            }
-        };
-    </script>
+    window.onload = function () {
+        const savedTheme = localStorage.getItem('theme') || 'orthodox';
+        document.getElementById('theme-select').value = savedTheme;
+        setTheme(savedTheme);
+        showDisclaimerPopup();
+    };
+</script>
     <style>
         .disclaimer-popup {
             position: fixed;
